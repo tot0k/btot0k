@@ -4,10 +4,6 @@
 	made with Twitch-API : https://github.com/justintv/Twitch-API/blob/master/IRC.md
 
 	you may need install 'requests' libraries : http://docs.python-requests.org/en/master/user/install/#install
-
-	commands :
-	- returning lists from files
-	- updating files from real time Twitch lists
 '''
 import requests
 from settings import *
@@ -25,9 +21,8 @@ def readFile(path):
 	file.close()
 	return tab
 
-def viewerList():
-	global CHANNEL
-	url = "https://tmi.twitch.tv/group/user/{}/chatters".format(CHANNEL[1:])
+def viewerList(channel):
+	url = "https://tmi.twitch.tv/group/user/{}/chatters".format(channel)
 	response = requests.get(url)
 	jsonResponse = response.json()
 
@@ -44,18 +39,18 @@ def viewerList():
 	file = open(PATH_VIEWERS_LIST,'a')
 	for viewer in viewerList:
 		if viewer not in tab:
-			tab.append(viewer)
-			file.write(viewer+"\n")
+			tab.append(viewer.lower())
+			file.write(viewer.lower()+"\n")
 	file.close()
 
 	return tab
 
-def getList(listName):
+def getList(listName,channel):
 	if listName == 'commands':
 		return readFile(PATH_COMMAND_LIST)
 	elif listName == 'admins':
 		return readFile(PATH_ADMINS_LIST)
 	elif listName == 'viewers':
-		return viewerList()
+		return viewerList(channel)
 	else:
 		return -1
