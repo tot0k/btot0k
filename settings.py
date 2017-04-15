@@ -1,7 +1,7 @@
 import socket, string
 
 HOST = "irc.twitch.tv"
-NICK = "bott0k"
+NICK = "nom de votre bot"
 PORT = 6667
-PASS = "oauth:5if2vwp3jolm2p6isqxdqdvpffxj33"
+PASS = "oauth: votre oauth ici"
 CHANNEL = "#t0t0k"
