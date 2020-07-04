@@ -124,11 +124,11 @@ def beer(user,arg):
 	if arg.lower() == BOT_NAME.lower():
 		return ["Non merci, je ne bois pas... Par contre je ne suis pas contre un peu d'huile ;)."]
 	elif arg.lower() == "all" and right(user):
-		return ["{} offre une bierre à tout le monde ! C'est sa tournée !".format(user)]
+		return ["{} offre une bière à tout le monde ! C'est sa tournée !".format(user)]
 	elif arg.lower() == user:
 		return ["{} se paye une bière. Alcolo va !".format(user)]
 	elif isViewer(arg.lower()):
-		return ["{} offre une bierre à {} !".format(user,arg)]
+		return ["{} offre une bière à {} !".format(user,arg)]
 	else:
 		return notViewer(user,arg)
 
@@ -141,6 +141,18 @@ def ananas(user,arg):
 		return ["{} se paye un jus d'ananas. C'est bon pour la santé !".format(user)]
 	elif isViewer(arg.lower()):
 		return ["{} offre un jus d'ananas à {} !".format(user,arg)]
+	else:
+		return notViewer(user,arg)
+
+def diabolo(user,arg):
+	if arg.lower() == BOT_NAME.lower():
+		return ["Non merci, je ne bois pas... Par contre je ne suis pas contre un peu d'huile ;)."]
+	elif arg.lower() == "all" and right(user):
+		return ["{} offre un diabolo kiwi à tout le monde ! C'est sa tournée !".format(user)]
+	elif arg.lower() == user:
+		return ["{} se paye un diabolo kiwi. C'est bon pour la santé !".format(user)]
+	elif isViewer(arg.lower()):
+		return ["{} offre un diabolo kiwi à {} !".format(user,arg)]
 	else:
 		return notViewer(user,arg)
 
@@ -178,7 +190,7 @@ def miss(user, arg):
 	return ["Lulu__my on sait que t'es là !"]
 
 def toktok(user, arg):
-	if user.lower() == "t0t0k":
+	if user.lower() == "tot0k":
 		return ["Qui est là ?"]
 	else:
 		msg = ["C'est TO-TOK, pas TOK TOK !"]

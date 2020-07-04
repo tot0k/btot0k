@@ -1,6 +1,6 @@
 import socket, string
 
 HOST = "irc.twitch.tv"
-NICK = "XXXXXXXXX"
+NICK = "XXXXXbot" # Replace with your credentials
 PORT = 6667
-PASS = "oauth: XXXXXXXX"
+PASS = "oauth:XXXXXXX" # Replace with your credentials

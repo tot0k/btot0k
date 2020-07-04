@@ -138,7 +138,7 @@ class Application(Tk):
 		self.check = IntVar()
 		self.channel.set("t0t0k")
 
-		menu = OptionMenu(self.main, self.channel, "t0t0k", "lacommu7arg", "kokuho","kayucha","sednegi")
+		menu = OptionMenu(self.main, self.channel, "t0t0k", "lacommu7arg", "kokuho","kayucha","sednegi","dax_olotl","misterbasful")
 		saisieChannel = Entry(self.main, textvariable = self.channel, width=20)
 		checkBox = Checkbutton(self.main, text="MOTD", variable=self.check, bg="light grey")
 
